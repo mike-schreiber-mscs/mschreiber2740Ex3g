@@ -42,7 +42,7 @@ public class PayrollObjMapper {
 		boolean fileOpened = false;
 		// Open the file.
 	    try {
-	    	this.outputFile = new PrintWriter (fileName); 
+	    	this.outputFile = new PrintWriter (this.fileName); 
 			fileOpened = true;
 	    }	
 			
@@ -50,10 +50,7 @@ public class PayrollObjMapper {
 	    
 		return fileOpened;
 		
-	}
-	
-	
-		
+	}	
 		
 	public DefaultListModel getAllPayroll(){
 		
@@ -75,7 +72,9 @@ public class PayrollObjMapper {
 		
 	
 	public void closeInputFile() {
-		if(this.inputFile !=null) this.inputFile.close();
+		if(this.inputFile !=null) {
+			this.inputFile.close();
+		}
 	}
 		
 	public Payroll getNextPayroll() {
@@ -104,30 +103,38 @@ public class PayrollObjMapper {
 	}
 		
 	public void closeOutputFile() {
-		if(this.outputFile !=null) this.outputFile.close();
+		if(this.outputFile !=null) {
+			this.outputFile.close();
+		}
 	}
+	
+	public void writePayroll(Payroll payroll) {
+		if (this.outputFile != null && payroll != null) {
+			
+			outputFile.println(payroll.getIdNumber());
+			outputFile.println(payroll.getName());
+			outputFile.println(payroll.getHourlyPay());
+			outputFile.println(payroll.gethours());
+		}
+		
+	}
+	
+	
 	
 	public void writeAllPayroll(DefaultListModel payrollCollection) {
-		if (this.openOutputFile()){
+		if (this.openOutputFile()) {
 			
+			payrollCollection.getSize();
 			
+			for (int i = 0; i < payrollCollection.getSize(); i+=1)
+				{
+				Payroll p = (Payroll) payrollCollection.get(i);
+				this.writePayroll(p);
+				
+				}
+
 		}
-		this.closeOutputFile();
 	}
-		
-		
-	//after adding the closeOutput file and writeAllPayroll I cannot get the listModel to populate
-		
-		
-		
-		
-		
-		
-	
-	
-	
-	
-	
 	
 	
 	
