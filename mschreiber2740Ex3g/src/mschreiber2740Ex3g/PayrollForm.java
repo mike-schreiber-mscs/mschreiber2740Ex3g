@@ -355,7 +355,7 @@ public class PayrollForm extends JFrame {
 	
 	protected void do_this_windowClosing(WindowEvent arg0) {
 		if(payrollObjMapper != null) {
-			payrollObjMapper.writeAllPayroll(payrollListModel);		
+			payrollObjMapper.writeAllPayroll(payrollListModel);					
 			}
 	}
 }

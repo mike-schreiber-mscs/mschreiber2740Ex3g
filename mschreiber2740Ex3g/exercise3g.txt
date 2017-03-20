@@ -1,12 +1,12 @@
-101
-Mark Swanson
-10.0
-40.0
-102
-Patti Wiegand
-30.0
-10.0
-103
-Lyle Stelter
-50.0
-11.0
+222
+Mark S
+22.0
+52.0
+105
+PattiW
+33.0
+22.0
+333
+Lyle Sts
+22.0
+22.0

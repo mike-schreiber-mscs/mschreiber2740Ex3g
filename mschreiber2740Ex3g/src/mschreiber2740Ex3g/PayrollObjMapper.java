@@ -132,7 +132,7 @@ public class PayrollObjMapper {
 				this.writePayroll(p);
 				
 				}
-
+			this.closeOutputFile();
 		}
 	}
 	
